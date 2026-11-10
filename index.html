@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova — AI Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="brand">
+          <span class="sparkle">✳</span>WEB<span>.AI</span>
+        </div>
+        <button type="button" id="newChat" class="new-chat-btn">
+          <span>＋</span> New Chat
+        </button>
+      </div>
+
+      <div class="topic-library">
+        <p class="sidebar-heading">POPULAR TOPICS</p>
+        <button type="button" class="topic-btn" data-prompt="Explain JavaScript closures with an easy code example">
+          ⚡ JavaScript Closures
+        </button>
+        <button type="button" class="topic-btn" data-prompt="What is the difference between CSS Flexbox and Grid?">
+          📐 Flexbox vs Grid
+        </button>
+        <button type="button" class="topic-btn" data-prompt="Give me 5 impressive full-stack project ideas for my portfolio">
+          🚀 Portfolio Project Ideas
+        </button>
+        <button type="button" class="topic-btn" data-prompt="Explain how async/await works behind the scenes in JavaScript">
+          ⏳ Async / Await Explained
+        </button>
+        <button type="button" class="topic-btn" data-prompt="How do I prepare for coding interviews and LeetCode effectively?">
+          🎯 DSA &amp; Interview Tips
+        </button>
+        <button type="button" class="topic-btn" data-prompt="Tell me a clever programming joke">
+          😄 Programmer Joke
+        </button>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="side-badge">
+          <strong>100% IN-BROWSER AI</strong>
+          <span>Zero API Key Required &bull; Runs Locally</span>
+        </div>
+        <button type="button" id="clearHistoryBtn" class="clear-history-btn">Clear Saved History</button>
+      </div>
+    </aside>
+
+    <!-- Main Chat Area -->
+    <section class="chat">
+      <header class="chat-header">
+        <div class="header-left">
+          <button type="button" id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle topics menu">☰</button>
+          <div>
+            <div class="bot-name">Nova Assistant <span class="version-tag">v2.5 Local</span></div>
+            <small class="bot-subtitle">Intelligent pre-fed conversational reasoning engine</small>
+          </div>
+        </div>
+        <div class="status-indicator">
+          <span class="pulse-dot"></span> Online &bull; Ready
+        </div>
+      </header>
+
+      <!-- Messages Stream -->
+      <div id="messages" class="messages">
+        <!-- Initial Welcome State rendered if empty -->
+      </div>
+
+      <!-- Input Form -->
+      <div class="chat-input-area">
+        <form id="chatForm" class="chat-form">
+          <textarea 
+            id="prompt" 
+            placeholder="Ask Nova about JavaScript, algorithms, project ideas, or code debugging..." 
+            rows="1" 
+            required
+          ></textarea>
+          <button type="submit" id="sendBtn" class="send-btn" aria-label="Send message">
+            <span>↑</span>
+          </button>
+        </form>
+        <p class="disclaimer">Nova runs client-side with a comprehensive pre-fed knowledge base. No external API key required.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
